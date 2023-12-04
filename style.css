@@ -1,0 +1,272 @@
+/* navbar */
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: poppin;
+    src: url(../Poppins/Poppins-Bold.ttf);
+}
+
+#loading-screen{
+    background-color: black;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.vertical-line{
+    width: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0;
+    transform: translate(-50%, -50%);
+    animation: expandLine 2s ease-in-out forwards;
+}
+
+.hidden{
+    display: none;
+}
+
+@keyframes expandLine {
+    0%{
+        height: 0;
+    }
+    50%{
+        transform: translate(-50%, -50%), scaleX(2);
+    }
+    100%{
+        height: 100%;
+        transform: translate(-50%, -50%), scaleX(1);
+    }
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    position: fixed;
+    z-index: 999;
+    overflow: hidden;
+    width: 100%;
+}
+
+.heading h3 {
+    font-weight: 500%;
+    padding: 8px 4px;
+    font-size: 32px;
+    padding-left: 60px;
+    font-weight: bolder;
+}
+
+.navbar {
+    font-weight: 500%;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.fix {
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    font-weight: bolder;
+    /* padding: 16px 22px; */
+}
+
+.list {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    /* padding: 16px 22px; */
+}
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: black;
+    color: #fff;
+    z-index: -1;
+    transition: transform 0.5s;
+}
+
+ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+ul li a:hover {
+    color: #fff;
+    padding: 12px 16px;
+    background-color: #000;
+    font-weight: 500%;
+    list-style-type: none;
+}
+
+ul li {
+    list-style-type: none;
+    font-size: 16px;
+}
+
+ul li a {
+    float: left;
+    width: 100px;
+    height: 50px;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    font-size: 17px;
+    transition: all 500ms;
+    position: relative;
+    z-index: 1;
+}
+
+header nav a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: right;
+    background: black;
+    color: #fff;
+    z-index: -1;
+    transition: transform 1s;
+}
+
+
+
+/* main */
+.main {
+    background-color: rgb(250, 248, 250);
+    align-items: center;
+    display: flex;
+    width: 90%;
+    position: relative;
+    margin: 7px;
+    margin-left: 60px;
+}
+
+.left img {
+    width: 480px;
+    height: 520px;
+    object-fit: cover;
+}
+
+.right {
+    padding: 20px;
+    margin: 20px;
+    transform: translateY(5%);
+    animation: slide-up 1.5s ease-in-out forwards;
+}
+@keyframes slide-up {
+    0%{
+        opacity: 0;
+        transform: translateY(5%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.right h1 {
+    font-size: 52px;
+    font-weight: bolder;
+    padding: 12px;
+    margin: 12px;
+}
+
+hr {
+    width: 70px;
+    margin-left: 20px;
+    border-width: 2px;
+    border-color: black;
+}
+
+/* h1 span{
+    margin-top: 20px;
+} */
+
+.right p {
+    font-size: 22px;
+    padding: 12px;
+    margin: 12px;
+}
+
+#element {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.buton {
+    padding: 12px;
+    margin: 8px;
+}
+
+.btn {
+    font-weight: bolder;
+    font-size: 22px;
+    background-color: black;
+    color: white;
+    padding: 12px;
+    margin: 2px;
+}
+
+.btn:hover {
+    color: black;
+    border: 1px solid black;
+    background-color: rgb(250, 248, 250);
+}
+
+/* footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 18px;
+    padding-left: 40px;
+    padding-top: 10px;
+    position: fixed;
+    background-color: white;
+    z-index: 2000;
+    bottom: 0;
+    top: 90%;
+    /* margin-top: 900px; */
+    width: 100%;
+}
+
+.social-icons {
+    width: 25px;
+    height: auto;
+    display: flex;
+    width: 15%;
+}
+
+i {
+    padding-right: 12px;
+    color: black;
+}
