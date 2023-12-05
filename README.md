@@ -2,7 +2,7 @@
   This is portfolio website.
 In this project
 <ol>
-  <li>i explain my skills and services.
+  <li>I explained my skills and services.
 <li>This project is designed with 6 pages.
 <li>Website name is Web Point.
 </li>
